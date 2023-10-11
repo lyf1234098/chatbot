@@ -1,0 +1,63 @@
+version: "3.1"
+
+stories:
+  - story: 用户打招呼并询问健康问题
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: health_query
+      - action: utter_health_query
+
+  - story: 用户描述症状并询问医生转诊
+    steps:
+      - intent: symptoms
+      - action: utter_头疼
+      - intent: doctor_referral
+      - action: utter_doctor_referral
+
+  - story: 用户询问药店药品供应
+    steps:
+      - intent: pharmacy_supply
+      - action: utter_pharmacy_supply
+
+  - story: 用户结束对话
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+  - story:  地址信息
+    steps:
+      - intent: query_weather
+      - action: utter_query_weather
+
+#症状
+  - story: 地
+    steps:
+      - intent: 头疼
+      - action: utter_头疼
+
+  - story: A
+    steps:
+      - intent: 鼻塞
+      - action: utter_鼻塞
+
+  - story: B
+    steps:
+      - intent: 温度
+      - action: utter_温度
+
+
+  - story: c
+    steps:
+      - intent: 看法
+      - action: utter_看法
+
+
+  - story: c
+    steps:
+      - intent: 推荐医生
+      - action: utter_推荐医生
+
+  - story: d
+    steps:
+      - intent: 医生电话
+      - action: utter_医生电话

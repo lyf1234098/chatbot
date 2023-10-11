@@ -1,0 +1,79 @@
+version: "3.1"
+
+intents:
+  - greet
+  - health_query
+  - tt
+  - doctor_referral
+  - pharmacy_supply
+  - goodbye
+  - query_weather
+  - 头疼
+  - 鼻塞
+  - 温度
+  - 看法
+  - 推荐医生
+  - 医生电话
+
+entities:
+  - team
+slots:
+  team:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: team
+
+responses:
+  utter_greet:
+    - text: "Hello! I'm a health aide. Is there anything I can help you with?"
+    - text: "Hi"
+  utter_health_query:
+    - text: "I can help you answer some questions about your health. Please tell me your symptoms。"
+
+
+  utter_头疼:
+    - text: "There are many reasons for a headache. I suggest you take your temperature"
+
+  utter_doctor_referral:
+    - text: "If you need a doctor's referral, I can help you find a nearby hospital."
+    - text: "I found a doctor who accepts new patients and you can call to make an appointment. If you have health insurance, it is recommended to check if a doctor is in your network before making an appointment
+
+"
+
+  utter_pharmacy_supply:
+    - text: "If you need information about drug supplies, I can help you find a pharmacy near you."
+    - text: "Sure, I can help you find a pharmacy nearby. Please provide your city or region so that I can more precisely check for you. Also, you can call nearby pharmacies before pharmacy opening hours to check if they have it in stock and ask about prices and available doses"
+
+
+
+  utter_goodbye:
+    - text: "Thanks for using a health aide. I wish you a speedy recovery! So long."
+
+  utter_鼻塞:
+    - text: "You probably have a cold"
+
+  utter_query_weather:
+    - text: "There is a Beijing Hospital in Beijing, where Doctor Wang, Doctor Li, Doctor Liu can treat you, you can choose one"
+
+  utter_温度:
+    - text: "You have a fever."
+
+
+  utter_看法:
+    - text: "You can take some medicine or go to see a doctor. I suggest you go to see a doctor."
+
+
+  utter_推荐医生:
+    - text: "I recommend you to choose Dr. Liu, who has extensive experience in treating fever."
+
+  utter_医生电话:
+    - text: "The doctor's cell phone number is 1518906534."
+
+
+
+#actions:
+#  - action_weather_init
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,71 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hello
+    - hi
+    - how do you do?
+    - good morning
+
+- intent: health_query
+  examples: |
+    - I don't feel well
+    - I have health problems
+    - My health is not so good
+    - I need some medical advice
+
+
+- intent: 头疼
+  examples: |
+    - I have a headache.
+
+
+- intent: doctor_referral
+  examples: |
+    - Please help me find a hospital
+    - I need a referral
+
+
+
+
+- intent: pharmacy_supply
+  examples: |
+    - Is there any aspirin in the nearby drugstore?
+    - Do you know where I can find some cold medicine?
+    - I need to buy vitamin C tablets
+    - Do you know where I can get medical supplies?
+- intent: goodbye
+  examples: |
+    - See you later!
+    - You can stand down now!
+    - Take leave
+- intent: query_weather
+  examples: |
+    - 我在[广州](team)。
+    - 我想查[北京](team)皮肤病医院。
+    - 我现在在[重庆](team)。
+    - [上海](team)有头痛药吗
+    _ [南京](team)
+
+- intent: 鼻塞
+  examples: |
+    -I have a stuffy, runny nose.
+
+- intent: 温度
+  examples: |
+    - My temperature was 38.5.
+
+- intent: 看法
+  examples: |
+    - What should I do.
+
+- intent: 推荐医生
+  examples: |
+    - Which doctor is better
+    - Which doctor do you recommend
+    _ Recommend one
+
+- intent: 医生电话
+  examples: |
+    - The doctor's cell phone number

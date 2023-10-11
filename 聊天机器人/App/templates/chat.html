@@ -1,0 +1,86 @@
+<html lang="zh-cn">
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="description" content="小美聊天机器人">
+		<meta name="keywords" content="小美聊天机器人">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<title>小美聊天机器人</title>
+<!--{#		<link rel="icon" href="/App/static/images/favicon.ico" type="image/x-icon">#}-->
+<!--		<link rel="stylesheet" href="/App/static/css/style2.css">-->
+		<link rel="stylesheet" href="{{ url_for('static',filename='css/style2.css') }}">
+<!--		<script type="text/javascript" src="/App/static/js/jquery-3.3.1.min.js"></script>-->
+		<script type="text/javascript" src="{{ url_for('static',filename='js/jquery-3.3.1.min.js') }}"></script>
+{#		<script type="text/javascript" src="/App/static/js/chat.js"></script>#}
+		<script type="text/javascript" src="{{ url_for('static',filename='js/chat.js') }}"></script>
+<!-- 		<script type="text/javascript" src="js/hidden.js"></script> -->
+	</head>
+      <style>
+		  .icon{
+    border-radius: 50%; /* 将图像边框半径设置为50%，使其变成圆形 */
+    width: 50px; /* 可以根据您的需求设置图像的宽度和高度 */
+    height: 50px;
+}
+	  </style>
+
+	<div class="speak_window">
+		<div class="speak_box">
+			<div class="answer">
+				{#					<div class="icon left"><img src="/App/static/images/ai.png"></div>#}
+				<div class="icon left"><img src="{{ url_for('static',filename='images/ai.png') }}"></div>
+
+				<div class="answer_text">
+					<p id="Greeting"></p>
+					<script>
+						var now = new Date();
+						var hour = now.getHours();
+						var V;
+						if(hour > 4 && hour <= 10) {
+							V = "Good  morning！";
+						} else if(hour > 10 && hour <= 13) {
+							V = "Good noon！";
+						} else if(hour > 13 && hour <= 17) {
+							V = "Good afternoon！";
+						} else {
+							V = "Good evening！";
+						}
+						document.getElementById("Greeting").innerHTML = V + "I am Xiao Mei, pleased to serve you! I can help you with pharmacy drug availability regarding health, symptoms, doctor referrals and user inquiries at local hospitals.";
+					</script>
+					<div class="choose">
+					</div>
+					<div id="subText"></div>
+					<a id="btn" onclick="change()" style="color: blue;"></a>
+
+				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="circle left">
+				<a href="xx">
+					{#					<img src="/App/static/images/keyboard.png">#}
+					<img src="{{ url_for('static',filename='images/keyboard.png') }}">
+				</a>
+			</div>
+			<div class="chat_box left">
+				<input type="text" onKeyUp="key_up()" placeholder="说点什么吧~~~" />
+			</div>
+			<div class="rectangle right">
+				<button onClick="send_message()">发送</button>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(function() {
+				$(document).keydown(function(event) {
+					if(event.keyCode == 13) {
+						send_message();
+					}
+				});
+
+				$('.chat_box input').focus();
+			});
+		</script>
+
+	</body>
+</html>
